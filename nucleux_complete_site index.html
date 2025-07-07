@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nucleux Lab - 디지털 마케팅의 새로운 기준</title>
+    <meta name="description" content="데이터 기반 퍼포먼스 마케팅 전문 에이전시 | ROI 180% 달성 | 구글/메타 파트너사 | 서울 자양동">
+    <meta property="og:title" content="Nucleux Lab - 디지털 마케팅 전문 에이전시">
+    <meta property="og:description" content="데이터 중심의 과학적 마케팅 접근법으로 검증된 성과를 만들어내는 전문 에이전시">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nucleuxlab.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23ffffff" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            animation: slideInLeft 1s ease-out 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: slideInLeft 1s ease-out 0.4s both;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .floating-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 1rem 0;
+            animation: floatingCard 3s ease-in-out infinite;
+        }
+
+        .floating-card:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .floating-card:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        @keyframes floatingCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-card h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .floating-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Case Studies Section */
+        .case-studies {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-study-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .case-study-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-header h3 {
+            color: #333;
+            font-size: 1.3rem;
+        }
+
+        .case-study-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .case-study-results {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            text-align: center;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .result-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .result-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .case-study-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Team & Partners Section */
+        .team-partners {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .team-partners-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-avatar {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-member h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .partners-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .partner-badge {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .partner-badge:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .partner-logo {
+            font-size: 2rem;
+            opacity: 0.9;
+        }
+
+        .partner-info h4 {
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .partner-info p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .team-section h3,
+        .partners-section h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 1rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-container,
+            .about-container,
+            .contact-container,
+            .team-partners-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-studies-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study-results {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">Nucleux Lab</div>
+            <nav class="nav-menu">
+                <a href="#home">홈</a>
+                <a href="#services">서비스</a>
+                <a href="#about">회사소개</a>
+                <a href="#contact">연락처</a>
+            </nav>
+            <a href="https://forms.gle/53VyNhep1V58DhHDA" target="_blank" class="cta-button">상담 문의</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>디지털 마케팅의<br>새로운 기준을<br>제시합니다</h1>
+                <p>Nucleux Lab은 데이터 기반의 전략적 마케팅으로 브랜드의 성장을 가속화합니다. 혁신적인 디지털 솔루션으로 고객의 비즈니스 목표를 달성하세요.</p>
+                <div class="hero-buttons">
+                    <a href="https://forms.gle/53VyNhep1V58DhHDA" target="_blank" class="btn-primary">무료 상담 받기</a>
+                    <a href="#services" class="btn-secondary">서비스 보기</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <h3>🚀 성과 향상</h3>
+                    <p>평균 ROI 140% 달성</p>
+                </div>
+                <div class="floating-card">
+                    <h3>📊 데이터 분석</h3>
+                    <p>월 50만+ 데이터 분석</p>
+                </div>
+                <div class="floating-card">
+                    <h3>🎯 타겟팅</h3>
+                    <p>정확한 고객층 분석</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>전문 서비스</h2>
+                <p>다양한 디지털 마케팅 솔루션으로 브랜드의 성장을 지원합니다</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3>퍼포먼스 마케팅</h3>
+                    <p>구글, 페이스북, 네이버 등 주요 플랫폼에서 ROI 최적화를 통한 효과적인 광고 운영을 제공합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>소셜미디어 마케팅</h3>
+                    <p>인스타그램, 유튜브, 틱톡 등 소셜 플랫폼에서 브랜드 인지도 향상과 커뮤니티 구축을 돕습니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>데이터 분석 & 인사이트</h3>
+                    <p>고급 분석 도구를 활용하여 마케팅 성과를 측정하고 최적화 방안을 제시합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>웹사이트 최적화</h3>
+                    <p>사용자 경험과 전환율 향상을 위한 웹사이트 분석 및 개선 작업을 진행합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✍️</div>
+                    <h3>콘텐츠 마케팅</h3>
+                    <p>브랜드 스토리텔링과 가치 전달을 위한 고품질 콘텐츠 기획 및 제작을 담당합니다.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>브랜딩 & 크리에이티브</h3>
+                    <p>브랜드 아이덴티티 구축부터 시각적 크리에이티브 제작까지 통합적인 브랜딩 서비스를 제공합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies">
+        <div class="container">
+            <div class="section-title">
+                <h2>성공 사례</h2>
+                <p>실제 고객사들과 함께 만들어낸 성과를 확인해보세요</p>
+            </div>
+            <div class="case-studies-grid">
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>카페 체인 "빈스토리"</h3>
+                        <span class="case-study-tag">로컬 마케팅</span>
+                    </div>
+                    <div class="case-study-results">
+                        <div class="result-item">
+                            <span class="result-number">+85%</span>
+                            <span class="result-label">매출 증가</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">-35%</span>
+                            <span class="result-label">광고비 절약</span>
+                        </div>
+                    </div>
+                    <p>지역 기반 타겟팅과 SNS 마케팅으로 매장 인지도를 크게 향상시킨 성공 사례입니다.</p>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>온라인 쇼핑몰 "퓨어마켓"</h3>
+                        <span class="case-study-tag">이커머스</span>
+                    </div>
+                    <div class="case-study-results">
+                        <div class="result-item">
+                            <span class="result-number">+120%</span>
+                            <span class="result-label">온라인 매출</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">2개월</span>
+                            <span class="result-label">목표 달성</span>
+                        </div>
+                    </div>
+                    <p>검색 광고와 리타겟팅을 통해 단기간에 온라인 매출을 대폭 증가시킨 대표 사례입니다.</p>
+                </div>
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3>헬스케어 브랜드 "웰니스랩"</h3>
+                        <span class="case-study-tag">브랜드 마케팅</span>
+                    </div>
+                    <div class="case-study-results">
+                        <div class="result-item">
+                            <span class="result-number">+95%</span>
+                            <span class="result-label">브랜드 인지도</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-number">140%</span>
+                            <span class="result-label">ROI 달성</span>
+                        </div>
+                    </div>
+                    <p>콘텐츠 마케팅과 인플루언서 협업으로 브랜드 가치를 높인 통합 마케팅 성공 사례입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team & Partners Section -->
+    <section class="team-partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>팀 & 파트너십</h2>
+                <p>전문성과 신뢰를 바탕으로 한 강력한 네트워크</p>
+            </div>
+            <div class="team-partners-content">
+                <div class="team-section">
+                    <h3>전문 팀 구성</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="team-avatar">👨‍💼</div>
+                            <h4>전략 기획팀</h4>
+                            <p>마케팅 전략 수립 및<br>데이터 분석 전문</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-avatar">🎨</div>
+                            <h4>크리에이티브팀</h4>
+                            <p>브랜딩 및 콘텐츠<br>제작 전문</p>
+                        </div>
+                        <div class="team-member">
+                            <div class="team-avatar">📊</div>
+                            <h4>퍼포먼스팀</h4>
+                            <p>광고 운영 및<br>최적화 전문</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="partners-section">
+                    <h3>협력 파트너사</h3>
+                    <div class="partners-grid">
+                        <div class="partner-badge">
+                            <div class="partner-logo">🚀</div>
+                            <div class="partner-info">
+                                <h4>그로스랩 (GrowthLab)</h4>
+                                <p>디지털 분석 전문 협력사</p>
+                            </div>
+                        </div>
+                        <div class="partner-badge">
+                            <div class="partner-logo">🎨</div>
+                            <div class="partner-info">
+                                <h4>크리에이티브 스튜디오 픽셀</h4>
+                                <p>비주얼 콘텐츠 제작 파트너</p>
+                            </div>
+                        </div>
+                        <div class="partner-badge">
+                            <div class="partner-logo">📈</div>
+                            <div class="partner-info">
+                                <h4>데이터드리븐 (DataDriven)</h4>
+                                <p>마케팅 자동화 솔루션 제공</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-container">
+                <div class="about-content">
+                    <h2>왜 Nucleux Lab을<br>선택해야 할까요?</h2>
+                    <p>Nucleux Lab은 데이터 중심의 과학적 마케팅 접근법으로 검증된 성과를 만들어내는 전문 에이전시입니다. 디지털 마케팅 전문 인력과 최신 AI 기술, 정밀한 분석 시스템을 활용해 고객사의 ROI를 극대화합니다.</p>
+                    <p>체계적인 A/B 테스트와 실시간 성과 모니터링을 통해 광고비 효율성을 평균 35% 향상시키며, 3년간 축적된 업계 전문성으로 고객사 매출을 평균 140% 성장시켜왔습니다.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">45+</div>
+                            <div class="stat-label">성공 프로젝트</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">88%</div>
+                            <div class="stat-label">고객 만족도</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">140%</div>
+                            <div class="stat-label">평균 ROI</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3년</div>
+                            <div class="stat-label">업계 경험</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-image">
+                        <div>혁신적인 마케팅 솔루션<br>브랜드 성장의 파트너</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-content">
+                    <h2>프로젝트를<br>시작해보세요</h2>
+                    <p>브랜드의 성장을 위한 첫 걸음을 함께 시작하겠습니다. 전문 컨설턴트가 맞춤형 솔루션을 제안해드립니다.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>010-5170-7852</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div>nucleuxlab@gmail.com</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>서울시 광진구 자양동</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>평일 09:00 - 18:00</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="회사명 또는 성함" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="이메일 주소" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="연락처">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="프로젝트에 대해 간단히 설명해주세요"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">상담 요청하기</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Nucleux Lab</h3>
+                    <p>디지털 마케팅의 새로운 기준을 제시하는 전문 에이전시입니다. 데이터 기반의 전략적 접근으로 브랜드의 성장을 이끌어갑니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>서비스</h3>
+                    <p><a href="#services">퍼포먼스 마케팅</a></p>
+                    <p><a href="#services">소셜미디어 마케팅</a></p>
+                    <p><a href="#services">데이터 분석</a></p>
+                    <p><a href="#services">웹사이트 최적화</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>회사정보</h3>
+                    <p><a href="#about">회사소개</a></p>
+                    <p><a href="#contact">연락처</a></p>
+                    <p><a href="#">개인정보처리방침</a></p>
+                    <p><a href="#">이용약관</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>연락처</h3>
+                    <p>📞 010-5170-7852</p>
+                    <p>📧 nucleuxlab@gmail.com</p>
+                    <p>📍 서울시 광진구 자양동</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nucleux Lab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+
+        // Form submission - redirect to Google Forms
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.open('https://forms.gle/53VyNhep1V58DhHDA', '_blank');
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and other elements
+        document.querySelectorAll('.service-card, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
